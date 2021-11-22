@@ -2,8 +2,6 @@ package factory
 
 abstract class Factory {
     var name: String = ""
-    set(name){
-        this.name = name}
 
     //implementation
     abstract fun prepare()
