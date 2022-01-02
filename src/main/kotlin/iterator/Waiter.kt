@@ -1,9 +1,11 @@
 package iterator
 
-class Waiter(val dinerMenu: DinerMenu, val pancakeMenu: PancakeMenu) {
+import kotlin.collections.Iterator
+
+class Waiter(val dinerMenu: Menu, val pancakeMenu: Menu) {
     fun printMenu(){
-        val dinerMenuIterator : Iterator = dinerMenu.createIterator()
-        val pancakeMenuIterator : Iterator = pancakeMenu.createIterator()
+        val dinerMenuIterator: Iterator<Int> = dinerMenu.createIterator()
+        val pancakeMenuIterator: Iterator<Int> = pancakeMenu.createIterator()
 
         println("MENU\n----\nSNIADANIA")
         printMenu(pancakeMenuIterator)
@@ -11,7 +13,7 @@ class Waiter(val dinerMenu: DinerMenu, val pancakeMenu: PancakeMenu) {
         printMenu(dinerMenuIterator)
     }
 
-    fun printMenu(iterator: Iterator) {
+    fun printMenu(iterator: Iterator<Int>) {
         while(iterator.hasNext()) {
             val menuPosition = iterator.next()
             println(menuPosition)

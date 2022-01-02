@@ -1,7 +1,8 @@
 package iterator
 
-class DinerMenu {
-    private val dinerMenu = arrayOf(5,20,36,55,66)
+import kotlin.collections.Iterator
 
-    fun createIterator() : Iterator = DinerMenuIterator(dinerMenu)
+class DinerMenu: Menu {
+    private val dinerMenu = arrayOf(5,20,36,55,66)
+    override fun createIterator(): Iterator<Int> = dinerMenu.iterator()
 }
